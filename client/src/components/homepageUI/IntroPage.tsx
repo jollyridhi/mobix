@@ -12,7 +12,7 @@ const IntroPage = () => {
                     <h2 className="text-bold mb-3">WELCOME TO <span className="text-secondary">FixYourPhone</span>
                     </h2>
                     <p className="text-black mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Quos dolo rem consequ untur, natus laudantium commodi earum aliquid in ullam.Lorem ipsum. consectetur adipisi cing elit. Quos dolo rem consequ untur, natus laudantium commodi earum aliquid in ullam dantium commodi earum aliquid in ullam.Lorem ipsum.
+                        Hi there! We’re Fix My Phone — your go-to solution for quick, reliable, and affordable phone repair services. With a team of skilled technicians and a passion for tech, we’re here to bring your devices back to life with care and precision.
                     </p>
 
                     <div className="row container rounded py-4" style={{background:'#d7ded6'}}>
@@ -22,9 +22,9 @@ const IntroPage = () => {
                                     <i className="ri-time-line text-white" style={{ fontSize: "3.5rem" }}></i>
                                 </div>
                                 <div>
-                                    <h4 className="mb-0">Life Time Warrenty</h4>
+                                    <h4 className="mb-0">Low Cost Services</h4>
                                     <p className="form-text text-black">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio, qui dicta alias.
+                                       We believe in delivering high-quality repairs without breaking the bank. Our pricing is transparent, competitive, and value-driven.
                                     </p>
                                 </div>
                             </div>
@@ -35,10 +35,10 @@ const IntroPage = () => {
                                     <i className="ri-price-tag-line text-white" style={{ fontSize: "3rem" }}></i>
                                 </div>
                                 <div>
-                                    <h4 className="mb-0">Low Cost Services</h4>
+                                    <h4 className="mb-0">Fast Delivery</h4>
                                     <p className="form-text text-black">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio, qui dicta alias.
-                                    </p>
+                                        Your time matters. That’s why we offer quick turnaround times to ensure you get your device back in perfect condition—fast.
+                                         </p>
                                 </div>
                             </div>
                         </div>
@@ -48,10 +48,10 @@ const IntroPage = () => {
                                     <i className="ri-truck-line text-white" style={{ fontSize: "3.5rem" }}></i>
                                 </div>
                                 <div>
-                                    <h4 className="mb-0">Fast Delivery</h4>
+                                    <h4 className="mb-0">24/7 Live Support</h4>
                                     <p className="form-text text-black">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio, qui dicta alias.
-                                    </p>
+                                        Need help or have a question? Our friendly support team is always here to assist you—anytime, anywhere.
+                                          </p>
                                 </div>
                             </div>
                         </div>
@@ -61,10 +61,10 @@ const IntroPage = () => {
                                     <i className="ri-customer-service-2-line text-white" style={{ fontSize: "3.5rem" }}></i>
                                 </div>
                                 <div>
-                                    <h4>24/7 Live Support</h4>
+                                    <h4>Certified Technicians</h4>
                                     <p className="form-text text-black">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio, qui dicta alias.
-                                    </p>
+                                        Our repairs are handled by trained professionals using quality parts and trusted tools, ensuring your device is in the best hands.
+                                           </p>
                                 </div>
                             </div>
                         </div>

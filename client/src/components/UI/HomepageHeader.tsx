@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import logo from '@/assets/logo.png';
@@ -22,7 +22,8 @@ export default function HomepageHeader() {
     loggedOut(authKey);
     userLoggedOut();
     router.push('/login');
-  }
+  };
+
   const items: MenuProps["items"] = [
     {
       key: "0",
@@ -35,65 +36,99 @@ export default function HomepageHeader() {
   ];
 
   return (
-
-    <nav className="navbar navbar-expand-lg bg-light bg-secondary">
+    <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #eaeaea' }}>
       <div className="container">
         <Link href="/" className="navbar-brand">
-          <Image src={logo} width={90} alt='logo' />
+          <Image src={logo} width={90} alt="logo" />
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler text-dark border-dark"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
-            <li className="nav-item">
-              <Link className="nav-link active text-white" aria-current="page" href="/">Home</Link>
-            </li>
+            {[
+              { label: 'Home', href: '/' },
+              { label: 'Blog', href: '/blog' },
+              { label: 'Contact', href: '/contact' },
+              { label: 'About', href: '/about' },
+            ].map((item) => (
+              <li className="nav-item" key={item.href}>
+                <Link className="nav-link fw-medium nav-hover" href={item.href}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
 
             <li className="nav-item">
-              <Link className="nav-link text-white" href="/blog">Blog</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" href="/contact">Contact</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" href="/about">About</Link>
-            </li>
-            <li className="nav-item">
-              <div className="d-flex">
-                {
-                  isLogin
-                    ?
-                    <Dropdown menu={{ items }}>
-                      <Link href={user?.role==='admin' ? "/admin/dashboard" : user?.role === 'super_admin' ? '/admin/dashboard' : '/customer/dashboard'} style={{ textDecoration: 'none' }}>
-                        <button className='px-2 btn shadow bg-primary d-flex gap-2 align-items-center btn-sm'>
-                          <span className='text-white'>
-                            Dashboard
-                          </span>
-                          {
-                            user?.profileImg ? <Image src={user?.profileImg} width={25} height={25} alt='image' className='rounded-circle border border-3 border-warning' />
-                            :
-                            <Image src={avatar} width={25} alt='image' className='rounded-circle border border-3 border-warning' />
-                          }
-                          
-                        </button>
-                      </Link>
-                    </Dropdown>
-                    :
-                    <>
-                      <Link href={'/login'} className="me-2">
-                        <Button type='primary' className='bg-primary'>Login</Button>
-                      </Link>
-                      <Link href={'/login'} className="">
-                        <Button type='primary' className='bg-primary'>SignUp</Button>
-                      </Link>
-                    </>
-                }
+              <div className="d-flex align-items-center gap-2">
+                {isLogin ? (
+                  <Dropdown menu={{ items }}>
+                    <Link
+                      href={
+                        user?.role === 'admin' || user?.role === 'super_admin'
+                          ? '/admin/dashboard'
+                          : '/customer/dashboard'
+                      }
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <button className="btn btn-outline-primary btn-sm d-flex align-items-center gap-2 rounded-pill px-3">
+                        <span className="fw-semibold">Dashboard</span>
+                        <Image
+                          src={user?.profileImg || avatar}
+                          width={25}
+                          height={25}
+                          alt="user"
+                          className="rounded-circle border border-2 border-primary"
+                        />
+                      </button>
+                    </Link>
+                  </Dropdown>
+                ) : (
+                  <>
+                    <Link href="/login">
+                      <Button type="primary" className="rounded-pill px-4">
+                        Login
+                      </Button>
+                    </Link>
+                    <Link href="/signup">
+                      <Button className="rounded-pill px-4" style={{ backgroundColor: '#f0f2f5', border: 'none' }}>
+                        Sign Up
+                      </Button>
+                    </Link>
+                  </>
+                )}
               </div>
             </li>
           </ul>
         </div>
       </div>
+
+      <style jsx>{`
+        .nav-link {
+          color: #333;
+          transition: all 0.3s ease;
+          padding: 8px 12px;
+          border-radius: 6px;
+        }
+
+        .nav-hover:hover {
+          background-color: #f0f2f5;
+          color: #000;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+          opacity: 0.9;
+        }
+      `}</style>
     </nav>
   );
 }
