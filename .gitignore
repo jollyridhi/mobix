@@ -1,8 +1,20 @@
+# Root node modules
 /node_modules
+
+# API backend node modules
 /api/node_modules
+
+# Prisma migrations
 /api/prisma/migrations
+
+# API build output
 /api/dist
-node_modules/
-.next/
+
+# Next.js build output
+.next
+
+# Environment variables
 .env
-.vscode/
+
+# VS Code settings
+.vscode
